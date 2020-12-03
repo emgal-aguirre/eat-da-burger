@@ -13,7 +13,7 @@ function objToSql(ob) {
   var arr = [];
 
   for (var key in ob) {
-    arr.push(key + '=' + [key]);
+    arr.push(key + '=' + ob[key]);
   }
   return arr.toString();
 }
@@ -69,5 +69,3 @@ var orm = {
 };
 
 module.exports = orm;
-
-// dont know why it wont push
