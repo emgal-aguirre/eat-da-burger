@@ -1,4 +1,4 @@
-const connection = require('./connection.js');
+var connection = require('./connection.js');
 
 function printQuestionMarks(num) {
   var arr = [];
@@ -6,6 +6,7 @@ function printQuestionMarks(num) {
   for (var i = 0; i < num; i++) {
     arr.push('?');
   }
+
   return arr.toString();
 }
 
@@ -15,11 +16,12 @@ function objToSql(ob) {
   for (var key in ob) {
     arr.push(key + '=' + ob[key]);
   }
+
   return arr.toString();
 }
 
 var orm = {
-  selectAll: function (tableInput, cb) {
+  all: function (tableInput, cb) {
     var queryString = 'SELECT * FROM ' + tableInput + ';';
     connection.query(queryString, function (err, result) {
       if (err) {
@@ -28,6 +30,7 @@ var orm = {
       cb(result);
     });
   },
+
   create: function (table, cols, vals, cb) {
     var queryString = 'INSERT INTO ' + table;
 
@@ -44,11 +47,10 @@ var orm = {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },
-  // change burger status to devoured
+
   update: function (table, objColVals, condition, cb) {
     var queryString = 'UPDATE ' + table;
 
@@ -62,7 +64,6 @@ var orm = {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },

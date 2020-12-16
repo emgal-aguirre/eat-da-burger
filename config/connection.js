@@ -1,8 +1,4 @@
-var express = require('express');
 var mysql = require('mysql');
-
-var app = express();
-var PORT = process.env.PORT || 8080;
 
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -14,7 +10,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function (err) {
   if (err) {
-    console.log('error connecting: ' + err.stack);
+    console.error('error connecting: ' + err.stack);
     return;
   }
   console.log('connected as id ' + connection.threadId);
