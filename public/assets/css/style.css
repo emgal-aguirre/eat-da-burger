@@ -1,7 +1,6 @@
 body {
   width: 99%;
   height: 900px;
-  background-color: #a6e1fa;
 }
 
 #top-bar {
@@ -64,6 +63,15 @@ body {
 }
 
 h1 {
-  color: #f30;
+  color: #f24063;
   font-weight: 800;
+  font-family: 'Inconsolata', monospace;
+}
+
+.jumbotron {
+  background-color: #a6e1fa;
+}
+
+.burgers-toeat {
+  background-color: brown;
 }
