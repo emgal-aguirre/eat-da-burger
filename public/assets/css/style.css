@@ -1,6 +1,7 @@
 body {
   width: 99%;
   height: 900px;
+  font-family: 'Inconsolata', monospace;
 }
 
 #top-bar {
@@ -74,4 +75,12 @@ h1 {
 
 .burgers-toeat {
   background-color: brown;
+}
+
+.btn {
+  width: 70px;
+  height: 25px;
+  font-size: 10px;
+  text-align: center;
+  margin-top: -50px;
 }
